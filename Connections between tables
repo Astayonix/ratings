@@ -1,0 +1,5 @@
+Connections between tables
+
+u.item.movie id = u.data.movie_id
+
+u.data.user_id = u.user.user id 

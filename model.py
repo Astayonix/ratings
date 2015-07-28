@@ -24,6 +24,17 @@ class User(db.Model):
     age = db.Column(db.Integer, nullable=True)
     zipcode = db.Column(db.String(15), nullable=True)
 
+class Movie(db.Model):
+    """Movies available to be rated"""
+
+    __tablename__ = "movies"
+
+    movie_id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String, nullable=True)
+    
+
+
+
 
 ##############################################################################
 # Helper functions

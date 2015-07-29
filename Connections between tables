@@ -3,3 +3,6 @@ Connections between tables
 u.item.movie id = u.data.movie_id
 
 u.data.user_id = u.user.user id 
+
+Don't use u.user.gender, u.user.occupation, u.item(all genre columns)
+Add email and password to u.user

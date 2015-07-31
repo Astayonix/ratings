@@ -18,12 +18,38 @@ app.secret_key = "ABC"
 app.jinja_env.undefined = StrictUndefined
 
 
-@app.route('/')
+@app.route('/', methods=["POST", "GET"])
 def index():
     """Homepage."""
 
     return render_template('homepage.html')
 
+@app.route("/users")
+def user_list():
+    """Show all users."""
+
+
+    users = User.query.all()
+    return render_template("user_list.html", users=users)
+
+@app.route("/login", methods = ['POST', "GET"])
+def login():
+    """Login form handling"""
+
+    if request.method == 'POST':
+        flash("You're In Like Flynn!")
+        return render_template("homepage.html")
+    return render_template("login.html")
+
+    email = request.form.get("email")
+    password = request.form.get("password")
+    zipcode = request.form.get("zipcode")
+    age = request.form.get("age")
+
+    # if 
+    # new_user = User(first = first,  age = age, zipcode = zipcode, email = email, password = password)
+    #     db.session.add(new_user)
+    # db.session.commit()
 
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the point

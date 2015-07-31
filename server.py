@@ -41,13 +41,14 @@ def login():
         return render_template("homepage.html")
     return render_template("login.html")
 
-    email = request.form.get("email")
-    password = request.form.get("password")
-    zipcode = request.form.get("zipcode")
-    age = request.form.get("age")
+# Didn't quite get this part working, but where there's a will, there's a way! :)
+    # email = request.form.get("email")
+    # password = request.form.get("password")
+    # zipcode = request.form.get("zipcode")
+    # age = request.form.get("age")
 
-    # if 
-    # new_user = User(first = first,  age = age, zipcode = zipcode, email = email, password = password)
+    # new_user = User(email = email, password = password, zipcode = zipcode, age = age)
+    # if new_user not in User:
     #     db.session.add(new_user)
     # db.session.commit()
 
